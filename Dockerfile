@@ -11,4 +11,4 @@ WORKDIR /app
 COPY ./build/libs/surge-converter-${APP_VERSION}.jar app.jar
 EXPOSE 8080
 
-ENTRYPOINT ["/bin/sh", "-c", "java -jar /app/app.jar"]
+ENTRYPOINT ["/bin/sh", "-c", "java -jar app.jar"]
