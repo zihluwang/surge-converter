@@ -14,7 +14,7 @@ internet-test-url = http://baidu.com
 proxy-test-url = http://bing.com
 test-timeout = 3
 http-listen=0.0.0.0:8234
-socks-listen=0.0.0.0:8235
+socks5-listen=0.0.0.0:8235
 
 [Proxy]
 DIRECT = direct
