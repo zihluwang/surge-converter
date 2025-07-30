@@ -38,7 +38,7 @@ public class SubscriptionService {
                             .path("/sub")
                             .queryParam("target", "surge")
                             .queryParam("ver", 4)
-                            .queryParam("url", UriUtil.encodeURIComponent(String.join("|", urls)))
+                            .queryParam("url", String.join("|", urls))
                             .queryParam("insert", false)
                             .queryParam("exclude", "(.*IPv6.*)|(.*时间.*)|(.*流量.*)|(.*重置.*)|(.*到期.*)")
                             .queryParam("emoji", false)
