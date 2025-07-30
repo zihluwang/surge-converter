@@ -31,22 +31,26 @@ public class SubscriptionService {
 
     public List<String> getNodes(List<String> urls) {
         var content = webClient.get()
-                .uri((builder) -> builder
-                        .scheme(appProperty.getConverterScheme())
-                        .host(appProperty.getConverterHost())
-                        .path("/sub")
-                        .queryParam("target", "surge")
-                        .queryParam("ver", 4)
-                        .queryParam("url", UriUtil.encodeURIComponent(String.join("|", urls)))
-                        .queryParam("insert", false)
-                        .queryParam("exclude", "(.*IPv6.*)|(.*时间.*)|(.*流量.*)|(.*重置.*)|(.*到期.*)")
-                        .queryParam("emoji", false)
-                        .queryParam("list", true)
-                        .queryParam("tfo", false)
-                        .queryParam("scv", true)
-                        .queryParam("fdn", false)
-                        .queryParam("sort", false)
-                        .build())
+                .uri((builder) -> {
+                    var uri = builder
+                            .scheme(appProperty.getConverterScheme())
+                            .host(appProperty.getConverterHost())
+                            .path("/sub")
+                            .queryParam("target", "surge")
+                            .queryParam("ver", 4)
+                            .queryParam("url", UriUtil.encodeURIComponent(String.join("|", urls)))
+                            .queryParam("insert", false)
+                            .queryParam("exclude", "(.*IPv6.*)|(.*时间.*)|(.*流量.*)|(.*重置.*)|(.*到期.*)")
+                            .queryParam("emoji", false)
+                            .queryParam("list", true)
+                            .queryParam("tfo", false)
+                            .queryParam("scv", true)
+                            .queryParam("fdn", false)
+                            .queryParam("sort", false)
+                            .build();
+                    log.debug("uri = {}", uri);
+                    return uri;
+                })
                 .retrieve()
                 .bodyToMono(String.class)
                 .block();
