@@ -41,7 +41,7 @@ jobs:
         run: |
           docker buildx build \
             --platform linux/amd64 \
-            --build-arg APP_VERSION="${{ github.event.release.tag_name }}"
+            --build-arg APP_VERSION="${{ github.event.release.tag_name }}" \
             -t ${{ vars.DOCKERHUB_USERNAME }}/surge-converter:${{ github.event.release.tag_name }} \
             -t ${{ vars.DOCKERHUB_USERNAME }}/surge-converter:latest \
             --push .
