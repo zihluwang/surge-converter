@@ -1,0 +1,36 @@
+openapi: 3.1.0
+info:
+  title: Surge Converter API
+  description: Surge Converter API
+  version: 0.1.2
+servers:
+  # If you want to execute the API within OpenAPI document, you MUST change this to match your
+  # current situation
+  - url: 'http://127.0.0.1:8080'
+paths:
+  /subscription:
+    get:
+      description: Get subscriptions.
+      parameters:
+        - name: urls
+          in: query
+          description: List of your real subscription address.
+          required: true
+          style: form         # standard collection format for query arrays like ?urls=1&urls=2...
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        200:
+          description: Subscribed.
+          content:
+            text/plain:
+              # The content can be viewed and modified at resources/templates/subscription.ftl
+              description: The content that can be used in Surge 5 directly.
+        500:
+          description: |
+            Server error, could be no nodes were found in your subscription address, or the targeted `subconverter` site is not available, see error log for more details.
+            
+            If you have questions about what exception it is, please raise an issue to ask for help.
+  
