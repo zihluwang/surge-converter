@@ -2,7 +2,7 @@ openapi: 3.1.0
 info:
   title: Surge Converter API
   description: Surge Converter API
-  version: 0.1.2
+  version: 0.1.4
 servers:
   # If you want to execute the API within OpenAPI document, you MUST change this to match your
   # current situation
