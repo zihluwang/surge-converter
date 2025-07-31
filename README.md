@@ -1,20 +1,21 @@
 # Surge Converter
 
-This is a subscription converter aims for Surge 4/5.
+This is a subscription converter for Surge 4/5.
 
 ## How to install
 
 ### 1. Create a config
 
-1. Create a config directory, and assume it is `/path/to/config`.
-2. Add a config file in your config directory: `application.yml` or `application.properties`, we will use `yaml` for example.
+1. Create a folder to store the configuration, assuming it is `/path/to/config`.
+2. Add a configuration file to the configuration folder: `application.yml` or `application.properties`, we will use the `yaml` file as an example.
    ```yaml
    app:
-     # This specifies the host of your `#!MANAGED-CONFIG`, for example, `#!MANAGED-CONFIG ${host}/subscription?urls=https://example.org/subscription1`.
+     # This specifies the host that Surge automatically downloads the configuration file. For better
+     # experience, it is highly recommended to use a domain name.
      host: http://127.0.0.1
      # This specifies which `subconverter` you want to use. HOST ONLY.
      converter-host: subconverter.example.org
-     # This specifies which scheme `subconverter` is being used. HOST ONLY.
+     # This specifies which scheme `subconverter` is being used. SCHEME ONLY.
      converter-scheme: https
    
    # This app is developed by Spring Boot, you can also add other spring boot configurations to customise this application.
