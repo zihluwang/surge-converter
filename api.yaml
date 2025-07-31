@@ -16,7 +16,7 @@ paths:
           in: query
           description: List of your real subscription address.
           required: true
-          style: form         # standard collection format for query arrays like ?urls=1&urls=2...
+          style: form # standard collection format for query arrays like ?urls=1&urls=2...
           schema:
             type: array
             items:
@@ -30,7 +30,8 @@ paths:
               description: The content that can be used in Surge 5 directly.
         500:
           description: |
-            Server error, could be no nodes were found in your subscription address, or the targeted `subconverter` site is not available, see error log for more details.
+            Server error, could be no nodes were found in your subscription address, or the targeted
+            `subconverter` site is not available, see error log for more details.
             
             If you have questions about what exception it is, please raise an issue to ask for help.
   
