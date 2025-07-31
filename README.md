@@ -22,7 +22,7 @@ This is a subscription converter aims for Surge 4/5.
 
 #### For those who use Docker
 
-1. Run `docker run -itd --name <container_name> -p <listen_port>:8080 -e TZ='<timezone>' -v </path/to/config>:/app/config`.
+1. Run `docker run -itd --name <container_name> -p <listen_port>:8080 -e TZ='<timezone>' -v </path/to/config>:/app/config zihluwang/surge-converter:latest`.
 
 #### For those who don't use Docker
 
