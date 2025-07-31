@@ -40,7 +40,7 @@ public class SubscriptionService {
                             .queryParam("ver", 4)
                             .queryParam("url", String.join("|", urls))
                             .queryParam("insert", false)
-                            .queryParam("exclude", "(.*IPv6.*)|(.*时间.*)|(.*流量.*)|(.*重置.*)|(.*到期.*)")
+                            .queryParam("exclude", ".*(IPv6|时间|流量|重置|到期|导航|倍率).*")
                             .queryParam("emoji", false)
                             .queryParam("list", true)
                             .queryParam("tfo", false)
